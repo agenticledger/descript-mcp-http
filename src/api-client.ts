@@ -134,12 +134,7 @@ export class DescriptClient {
   async importMedia(opts: {
     project_name?: string;
     project_id?: string;
-    add_media?: {
-      url?: string;
-      name?: string;
-      content_type?: string;
-      file_size?: number;
-    }[];
+    add_media?: Record<string, { url?: string; content_type?: string; file_size?: number }>;
     add_compositions?: {
       name?: string;
       tracks?: { media_name: string }[];

@@ -96,7 +96,8 @@ export const tools: ToolDef[] = [
       if (args.project_name) body.project_name = args.project_name;
       if (args.project_id) body.project_id = args.project_id;
       if (args.media_url) {
-        body.add_media = [{ url: args.media_url, name: args.media_name }];
+        const mediaKey = args.media_name || 'media.mp4';
+        body.add_media = { [mediaKey]: { url: args.media_url } };
       }
       if (args.composition_name) {
         body.add_compositions = [{ name: args.composition_name }];
